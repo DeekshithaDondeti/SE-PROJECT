@@ -1,34 +1,34 @@
 import pandas as pd
-df = pd.read_csv("dataset.csv")
-df.replace("Telangana ","Telangana", inplace = True)
-df.replace("Tamilnadu ","Tamilnadu", inplace = True)
+df = pd.read_csv('dataset.csv')
+
+print(df.columns.values)
+print(df.shape[0])
+
+state_city = {}
+city_place = {}
+
 statelist = df["State"].tolist()
 statelist = list(set(statelist))
-statetocity = {}
-for i in range(len(statelist)):
-    for j in range(len(df["City"])):
-        if statelist[i] == df.iloc[j]["State"]:
-            if statelist[i] not in statetocity:
-                statetocity[statelist[i]] = [df.iloc[j]["City"]]
-            else:
-                statetocity[statelist[i]].append(df.iloc[j]["City"])
-for i in statetocity:
-    statetocity[i] = list(set(statetocity[i]))
-    print(i)
-    print(statetocity[i])
-    for j in range(len(df["Name"])):
-        if citylist[i] == df.iloc[j]["City"]:
-            if citylist[i] not in citytoplace:
-                citytoplace[citylist[i]] = [df.iloc[j]["Name"]]
-            else:
-                citytoplace[citylist[i]].append(df.iloc[j]["Name"])
-for i in citytoplace:
-    citytoplace[i] = list(set(citytoplace[i]))
-    print(i)
-    print(citytoplace[i])
-
 
 citylist = df["City"].tolist()
 citylist = list(set(citylist))
-citytoplace = {}
-for i in range(len(citylist)):
+
+for i in range(0,df.shape[0]):
+    if df.iloc[i]['State'] not in state_city.keys():
+        state_city[df.iloc[i]['State']] = [df.iloc[i]['City']]
+    elif df.iloc[i]['State'] in state_city.keys() and df.iloc[i]['City'] not in state_city[df.iloc[i]['State']]:
+        state_city[df.iloc[i]['State']].append(df.iloc[i]['City'])
+
+for i in range(0,df.shape[0]):
+    if df.iloc[i]['City'] not in city_place.keys():
+        city_place[df.iloc[i]['City']] = [df.iloc[i]['Name']]
+    elif df.iloc[i]['City'] in city_place.keys() and df.iloc[i]['Name'] not in city_place[df.iloc[i]['City']]:
+        city_place[df.iloc[i]['City']].append(df.iloc[i]['Name'])
+
+for i in state_city:
+    print(i,state_city[i])
+
+print( '-------------------------------------------')
+
+for i in city_place:
+    print(i,city_place[i])
