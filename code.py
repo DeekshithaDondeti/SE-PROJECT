@@ -16,11 +16,6 @@ for i in statetocity:
     statetocity[i] = list(set(statetocity[i]))
     print(i)
     print(statetocity[i])
-
-citylist = df["City"].tolist()
-citylist = list(set(citylist))
-citytoplace = {}
-for i in range(len(citylist)):
     for j in range(len(df["Name"])):
         if citylist[i] == df.iloc[j]["City"]:
             if citylist[i] not in citytoplace:
@@ -31,3 +26,9 @@ for i in citytoplace:
     citytoplace[i] = list(set(citytoplace[i]))
     print(i)
     print(citytoplace[i])
+
+
+citylist = df["City"].tolist()
+citylist = list(set(citylist))
+citytoplace = {}
+for i in range(len(citylist)):
