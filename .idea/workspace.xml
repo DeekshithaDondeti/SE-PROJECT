@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a25d4afb-e4af-4846-9065-e723d8393998" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cfddf89e-2a3f-40b0-9fea-814a91048c96" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.py" beforeDir="false" afterPath="$PROJECT_DIR$/code.py" afterDir="false" />
     </list>
@@ -93,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.travelsalesman" />
         <item itemvalue="Python.code" />
+        <item itemvalue="Python.travelsalesman" />
         <item itemvalue="Python.travelsalesman" />
         <item itemvalue="Python.code" />
         <item itemvalue="Python.travelsalesman" />
@@ -110,6 +109,14 @@
       <option name="presentableId" value="Default" />
       <updated>1679518004085</updated>
     </task>
+    <task id="LOCAL-00001" summary="changes made 1">
+      <created>1680210811613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680210811613</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,5 +141,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes made" />
+    <MESSAGE value="changes made 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes made 1" />
   </component>
 </project>
