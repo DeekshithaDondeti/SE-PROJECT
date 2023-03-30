@@ -61,8 +61,13 @@ response = requests.get(p1+p2+p3, headers={'Authorization': '2dfdb55d-3f12-4739-
 dis = []
 startres = requests.get("https://apis.mapmyindia.com/advancedmaps/v1/dc801eca-bd5d-4748-8767-7b276747ca2b/distance_matrix/driving/"+startpoint+";"+p11+"?rtype=0&region=ind")
 t = startres.json()
-
-
+print(t)
+for i in t['results']['distances'][0]:
+    dis.append(i)
+sourcepoint = dis.index(min(dis[1:]))
+print(dis)
+print("Source point is",end = " ")
+print(sourcepoint)
 
 response = requests.get(p1+p11+p2+p3, headers={'Authorization': 'dc801eca-bd5d-4748-8767-7b276747ca2b'})
 
@@ -107,7 +112,7 @@ def traveling_salesman(graph, source):
     return path
 
 graph = durmat
-print(traveling_salesman(graph,2))
+print(traveling_salesman(graph,sourcepoint))
 
 
 #hiii
