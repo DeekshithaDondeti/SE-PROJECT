@@ -1,0 +1,150 @@
+Index: code.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pandas as pd\r\nimport requests\r\ndf = pd.read_csv('dataset.csv')\r\n\r\nprint(df.columns.values)\r\nprint(df.shape[0])\r\n\r\nstate_city = {}\r\ncity_place = {}\r\n\r\nstatelist = df[\"State\"].tolist()\r\nstatelist = list(set(statelist))\r\n\r\ncitylist = df[\"City\"].tolist()\r\ncitylist = list(set(citylist))\r\n\r\nfor i in range(0,df.shape[0]):\r\n    if df.iloc[i]['State'] not in state_city.keys():\r\n        state_city[df.iloc[i]['State']] = [df.iloc[i]['City']]\r\n    elif df.iloc[i]['State'] in state_city.keys() and df.iloc[i]['City'] not in state_city[df.iloc[i]['State']]:\r\n        state_city[df.iloc[i]['State']].append(df.iloc[i]['City'])\r\n\r\nfor i in range(0,df.shape[0]):\r\n    if df.iloc[i]['City'] not in city_place.keys():\r\n        city_place[df.iloc[i]['City']] = [df.iloc[i]['Name']]\r\n    elif df.iloc[i]['City'] in city_place.keys() and df.iloc[i]['Name'] not in city_place[df.iloc[i]['City']]:\r\n        city_place[df.iloc[i]['City']].append(df.iloc[i]['Name'])\r\n\r\n# for i in state_city:\r\n#     print(i,state_city[i])\r\n#\r\n# print('-------------------------------------------')\r\n#\r\n# for i in city_place:\r\n#     print(i,city_place[i])\r\n\r\nlocpoints= [\"77.983936,28.255904\",\"77.05993,28.487555\",\"77.15993,28.587555\",\"77.25993,28.687555\"]\r\np1 = \"https://apis.mapmyindia.com/advancedmaps/v1/2dfdb55d-3f12-4739-bdc5-2d85c76fcd57/distance_matrix/driving/\"\r\np2 = \"?sources=\"\r\np3 = \"&destinations=\"\r\nfor i in range(len(locpoints)):\r\n    if i == len(locpoints)-1:\r\n        p1 = p1+locpoints[i]\r\n        p2 = p2 + str(i)\r\n        p3 = p3 + str(i)\r\n    else:\r\n        p1 = p1+locpoints[i]+\";\"\r\n        p2 = p2 + str(i) + \";\"\r\n        p3 = p3 + str(i) + \";\"\r\n\r\nresponse = requests.get(p1+p2+p3, headers={'Authorization': '2dfdb55d-3f12-4739-bdc5-2d85c76fcd57'})\r\nd = response.json()\r\ndismat = []\r\ndurmat = []\r\nfor i in d['results']['distances']:\r\n    dismat.append(i)\r\nfor i in d['results']['durations']:\r\n    durmat.append(i)\r\nprint(dismat)\r\nprint(durmat)\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/code.py b/code.py
+--- a/code.py	(revision 673306f28d947736fab812759da92d54a9d3b3c3)
++++ b/code.py	(date 1680206346309)
+@@ -50,6 +50,7 @@
+ 
+ response = requests.get(p1+p2+p3, headers={'Authorization': '2dfdb55d-3f12-4739-bdc5-2d85c76fcd57'})
+ d = response.json()
++print(response.status_code)
+ dismat = []
+ durmat = []
+ for i in d['results']['distances']:
+@@ -58,5 +59,5 @@
+     durmat.append(i)
+ print(dismat)
+ print(durmat)
+-
++#
+ 
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.10 (SE-PROJECT)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 673306f28d947736fab812759da92d54a9d3b3c3)
++++ b/.idea/misc.xml	(date 1679518151803)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (SE-PROJECT)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (SE-PROJECT) (2)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n<<<<<<< HEAD\r\n    <list default=\"true\" id=\"ee6a0c6c-9485-4ad8-b77f-4eea14de42f8\" name=\"Changes\" comment=\"\" />\r\n=======\r\n    <list default=\"true\" id=\"ee6a0c6c-9485-4ad8-b77f-4eea14de42f8\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/code.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/code.py\" afterDir=\"false\" />\r\n    </list>\r\n>>>>>>> 06fd3efe5c1ce100e41e1fa79533cd7a806711d8\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NJbQNucVWnhBRYY7IXmNkQQihn\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"code\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"SE-PROJECT\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/code.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.code\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ee6a0c6c-9485-4ad8-b77f-4eea14de42f8\" name=\"Changes\" comment=\"\" />\r\n      <created>1679385114687</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1679385114687</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 673306f28d947736fab812759da92d54a9d3b3c3)
++++ b/.idea/workspace.xml	(date 1680206939104)
+@@ -1,28 +1,33 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-<<<<<<< HEAD
+-    <list default="true" id="ee6a0c6c-9485-4ad8-b77f-4eea14de42f8" name="Changes" comment="" />
+-=======
+-    <list default="true" id="ee6a0c6c-9485-4ad8-b77f-4eea14de42f8" name="Changes" comment="">
++    <list default="true" id="a25d4afb-e4af-4846-9065-e723d8393998" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/code.py" beforeDir="false" afterPath="$PROJECT_DIR$/code.py" afterDir="false" />
+     </list>
+->>>>>>> 06fd3efe5c1ce100e41e1fa79533cd7a806711d8
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectId" id="2NJbQNucVWnhBRYY7IXmNkQQihn" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
++  <component name="ProjectId" id="2NNwlwOxZRjJWBDc76vafWmXD7U" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -33,7 +38,7 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+   }
+ }</component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Python.code">
+     <configuration name="code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="SE-PROJECT" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -55,20 +60,42 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
++    <configuration name="travelsalesman" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="SE-PROJECT" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/travelsalesman.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
+     <recent_temporary>
+       <list>
+         <item itemvalue="Python.code" />
++        <item itemvalue="Python.travelsalesman" />
+       </list>
+     </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="ee6a0c6c-9485-4ad8-b77f-4eea14de42f8" name="Changes" comment="" />
+-      <created>1679385114687</created>
++      <changelist id="a25d4afb-e4af-4846-9065-e723d8393998" name="Changes" comment="" />
++      <created>1679518004085</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1679385114687</updated>
++      <updated>1679518004085</updated>
+     </task>
+     <servers />
+   </component>
