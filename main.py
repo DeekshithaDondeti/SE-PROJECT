@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key=os.urandom(10)
 
 
-conect = mysql.connector.connect(host="127.0.0.1",user="root",password="zxcvbnm9",database="amlogin")
+conect = mysql.connector.connect(host="127.0.0.1",user="root",password="Deekshitha@2605",database="seproject")
 cursor= conect.cursor()
 
 # routing to the login page
@@ -54,11 +54,11 @@ def authentication():
 # adding users after registration
 @app.route('/adduser',methods=['POST'])
 def adduser():
+    username = request.form.get('username')
     name = request.form.get('name')
-    number = request.form.get('number')
     email = request.form.get('email')
     password = request.form.get('password')
-    cursor.execute("""insert into `users`(`name`,`phoneNo`,`email`,`password`) values ('{}','{}','{}','{}')""".format(name,number,email,password))
+    cursor.execute("""insert into `users`(`username`,`name`,`email`,`password`) values ('{}','{}','{}','{}')""".format(username,name,email,password))
     conect.commit()
     return redirect('/')
 
