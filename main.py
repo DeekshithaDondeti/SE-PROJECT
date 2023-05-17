@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key=os.urandom(10)
 
 
-conect = mysql.connector.connect(host="127.0.0.1",user="root",password="Deekshitha@2605",database="seproject")
+conect = mysql.connector.connect(host="127.0.0.1",user="root",password="zxcvbnm9",database="seproject")
 cursor= conect.cursor()
 
 # routing to the login page
@@ -20,6 +20,7 @@ def home():
         return render_template('userpage.html')
     else:
         return render_template('login.html')
+
 
 # routing to the registration page
 @app.route('/register')
@@ -34,14 +35,21 @@ def userpage():
     else:
         return redirect('/')
 
+@app.route('/budget',methods = ['GET'])
+def budget():
+    if 'username' in session:
+        return render_template('budget.html')
+    else:
+        return render_template('login.html')
+
 # authentication after clicking on login
 @app.route('/authentication',methods=['POST'])
 def authentication():
-    email= request.form.get('email') # taking input from the users
+    username= request.form.get('username') # taking input from the users
     password= request.form.get('password')
 
     # checking if the given username, password exist in the database
-    cursor.execute("""select * from `users` where `email` like '{}' and `password` like '{}'""".format(email,password))
+    cursor.execute("""select * from `users` where `username` like '{}' and `password` like '{}'""".format(username,password))
     users = cursor.fetchall()
     if len(users)>0:
         session['username']= users[0][2] # using session based authentication
