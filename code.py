@@ -114,7 +114,3 @@ def traveling_salesman(graph, source):
 graph = durmat
 print(traveling_salesman(graph,sourcepoint))
 
-
-
-#hiii
-

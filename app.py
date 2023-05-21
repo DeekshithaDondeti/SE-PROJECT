@@ -6,14 +6,18 @@ import string
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key=os.urandom(10)
+app.secret_key = os.urandom(10)
 
 conect = mysql.connector.connect(host="127.0.0.1",user="root",password="Deekshitha@2605",database="seproject")
 cursor= conect.cursor()
-
-# routing to the login page
 @app.route('/')
 def home():
+    return render_template('index.html')
+
+# Routing to the login page
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    # return render_template('login.html')
     if 'username' in session:
         return render_template('userpage.html')
     else:
@@ -73,6 +77,6 @@ def adduser():
 def logout():
     session.pop('username') # popping the username from session when logged out
     return redirect('/')
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
+
