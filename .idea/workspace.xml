@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfddf89e-2a3f-40b0-9fea-814a91048c96" name="Changes" comment="changes made 1">
+      <change afterPath="$PROJECT_DIR$/static/css/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/travel-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/travel-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/travel-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/travel-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/triptok.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/user3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/befroute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code.py" beforeDir="false" afterPath="$PROJECT_DIR$/code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -41,23 +62,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Deekshitha/SE-PROJECT/templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/chgay/Documents/SE-PROJECT/static/css/images"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chgay\Documents\SE-PROJECT\static\css\images" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chgay\Documents\SE-PROJECT\templates" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates\auth" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates\images" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\static\css" />
-      <recent name="C:\Users\Deekshitha\SE-PROJECT\static" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -154,8 +177,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.code" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.travelsalesman" />
         <item itemvalue="Python.travelsalesman" />
       </list>

@@ -4,11 +4,15 @@ import os
 from random import choice
 import string
 from datetime import datetime
+from code import statelist
+from code import citylist
+from code import state_city
+from code import city_place
 
 app = Flask(__name__)
 app.secret_key = os.urandom(10)
 
-conect = mysql.connector.connect(host="127.0.0.1",user="root",password="Deekshitha@2605",database="seproject")
+conect = mysql.connector.connect(host="127.0.0.1",user="root",password="zxcvbnm9",database="seproject")
 cursor= conect.cursor()
 @app.route('/')
 def home():
@@ -37,12 +41,31 @@ def userpage():
     else:
         return redirect('/')
 
+
+@app.route('/befroute',methods=['GET', 'POST'])
+def befroute():
+    state_city_dict = {
+        "California": ["Los Angeles", "San Francisco"],
+        "New York": ["New York City", "Albany"]
+    }
+
+    city_place_dict = {
+        "Los Angeles": ["Place 1", "Place 2", "Place 3"],
+        "San Francisco": ["Place 4", "Place 5", "Place 6"],
+        "New York City": ["Place 7", "Place 8", "Place 9"],
+        "Albany": ["Place 10", "Place 11", "Place 12"]
+    }
+
+    return render_template('befroute.html', state_city_dict=state_city, city_place_dict=city_place)
+
+
 @app.route('/budget',methods = ['GET'])
 def budget():
     if 'username' in session:
         return render_template('budget.html')
     else:
         return render_template('login.html')
+
 
 # authentication after clicking on login
 @app.route('/authentication',methods=['POST'])
@@ -72,11 +95,20 @@ def adduser():
     conect.commit()
     return redirect('/')
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    selected_places = request.form.getlist('selectedPlaces')
+    # Do something with the selected places
+    print(selected_places)
+    # Return a response or redirect to another page
+    return 'Form submitted successfully'
+
 # routing when clicked on logout
 @app.route('/logout')
 def logout():
     session.pop('username') # popping the username from session when logged out
     return redirect('/')
+
 if __name__ == '__main__':
     app.run()
 
