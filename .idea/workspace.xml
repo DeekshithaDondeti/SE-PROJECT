@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfddf89e-2a3f-40b0-9fea-814a91048c96" name="Changes" comment="changes made 1">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/dropdownbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/i1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/new.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/p1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/p2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/p3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/sun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Image/user2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/styleb.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/stylel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/stylet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/styleu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/befroute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/budget.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/budget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +68,21 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Deekshitha/SE-PROJECT/templates&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Deekshitha/SE-PROJECT/static/css/Image&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Deekshitha\SE-PROJECT\static\css\Image" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates" />
+      <recent name="C:\Users\Deekshitha\SE-PROJECT\map" />
+      <recent name="C:\Users\Deekshitha\SE-PROJECT\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Deekshitha\SE-PROJECT\static\css\Image" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\templates" />
-      <recent name="C:\Users\Deekshitha\SE-PROJECT\templates\auth" />
-      <recent name="C:\Users\Deekshitha\SE-PROJECT\templates\images" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\static\css" />
+      <recent name="C:\Users\Deekshitha\SE-PROJECT\static\css\images" />
       <recent name="C:\Users\Deekshitha\SE-PROJECT\static" />
     </key>
   </component>
@@ -212,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684680440738</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changes made 1">
+      <created>1684680559124</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684680559125</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

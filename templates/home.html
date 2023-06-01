@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/styleh.css') }}">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <ul>
+                <img src="{{ url_for('static',filename='css/Image/logo.png') }}" class="logo">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <!-- <li><a href="#">Blog</a></li> -->
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Trips</a></li>
+
+                    <a href="{{url_for('login') }}" class="btn">Log In</a>
+                <div class="content">
+                    <h1 class="anim">Travel Organizer</h1>
+                    <h2 class="anim">Explore·Optimize·Budget</h2>
+                    <p class="anim">Discover More, Spend Less and Navigate the World Wisely.</p>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="back">
+        <div class="places1">
+            <div class="placebox">
+                <h4>Gateway of India</h4>
+                <img src="{{ url_for('static',filename='css/Image/1.jpg') }}">
+                <p class = "content1">The Gateway of India is an arch-monument built in the early 20th century in the city of Mumbai (Bombay), India.</p>
+            </div>
+            <div class="placebox">
+                <h4>Golden Temple</h4>
+                <img src="{{ url_for('static',filename='css/Image/4.jpg') }}">
+                <p class = "content1">The Golden Temple is a gurdwara located in the city of Amritsar, Punjab, India. It is the preeminent spiritual site of Sikhism.</p>
+            </div>
+            <div class="placebox">
+                <h4>Munroe Island</h4>
+                <img src="{{ url_for('static',filename='css/Image/2.jpg') }}">
+                <p class = "content1">Munroe Island  is an inland island group located at the confluence of Ashtamudi Lake and the Kallada River, in Kollam district, Kerala.</p>
+            </div>
+        </div>
+
+        <div class="places2">
+            <div class="placebox">
+                <h4>Indus River</h4>
+                <img src="{{ url_for('static',filename='css/Image/5.jpg') }}" >
+                <p class = "content1">The Indus River in Ladakh plays a very important role in the lives of the Ladakhi people.</p>
+            </div>
+            <div class="placebox">
+                <h4>kunj Bihari Temple</h4>
+                <img src="{{ url_for('static',filename='css/Image/6.jpg') }}" >
+                <p class = "content1">Kunj Bihari Temple is situated in Jodhpur which seems to be the replica of the famous Ghanshyamji temple in Jodhpur.</p>
+            </div>
+            <div class="placebox">
+                <h4>Taj Mahal</h4>
+                <img src="{{ url_for('static',filename='css/Image/7.jpg') }}" >
+                <p class = "content1">The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="banner">
+        <div class="banner-highlights">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="Things">
+        <img src="{{ url_for('static',filename='css/Image/oproute.jpg')}}">
+        <h3>"Discover Effortless Exploration: Unlock Your Perfect Journey with Optimized Routes!"</h3>
+        <!-- <p>  3. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
+    </div>
+
+    <div class="budget">
+        <img src="{{ url_for('static',filename='css/Image/budget.jpg')}}">
+        <!-- <h3>Budget Tracking</h3> -->
+        <h3>"Budget Bliss: Track, Save, and Explore with Confidence!"</h3>
+    </div>
+
+    <div class="iten">
+        <div class="travel">
+            <img src="{{ url_for('static',filename='css/Image/ship.png')}}">
+            <h4>Activities</h4>
+            <p class="itentext">203 Fake St. Mountain View,<br> San Francisco, California, USA</p>
+        </div>
+        <div class="travel">
+            <img src="{{ url_for('static',filename='css/Image/world.png')}}" >
+            <h4>Travel plans</h4>
+            <p class="itentext" >A small river named Duden flows<br> by their place and supplies.</p>
+
+        </div>
+        <div class="travel">
+            <img src="{{ url_for('static',filename='css/Image/compass.png')}}">
+            <h4>Private Guide</h4>
+            <p class="itentext" >A small river named Duden flows<br> by their place and supplies.</p>
+        </div>
+        <div class="travel">
+            <img src="{{ url_for('static',filename='css/Image/destination.png')}}" >
+            <h4>Location Manager</h4>
+            <p class="itentext" >A small river named Duden flows<br> by their place and supplies.</p>
+        </div>
+    </div>
+
+    <section class="footer">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            <img src="{{ url_for('static',filename='css/Image/logo.png')}}" class="footer-logo">
+            <p>Amazing website, it gave an optimized route and I could cover all destinations in less number of days</p>
+            </div>
+            <div class="col-md-3">
+            <h4>Features</h4>
+            <p>Deals & Offers</p>
+            <p>Customer Reviews</p>
+            <p>Cancelation Policies</p>
+            </div>
+            <div class="col-md-3">
+            <h4>Quick Contact</h4>
+            <p><i class="fa fa-phone-square"></i> +1 0123456789</p>
+            <p><i class="fa fa-envelope"></i> hello@example.com</p>
+            <p><i class="fa fa-home"></i> xyz Road, ABC city</p>
+            </div>
+            <div class="col-md-3">
+                <h4>Follow Us on</h4>
+                <p><i class="fa fa-facebook-official"></i> Facebook</p>
+                <p><i class="fa fa-youtube-play"></i> Youtube</p>
+                <p><i class="fa fa-twitter"></i> Twitter</p>
+            </div>
+        </div><hr>
+            <p class="copyright">Made with <i class="fa fa-heart"> </i> By optimized routes </p>
+        </div>
+        </section>
+</body>
+</html>

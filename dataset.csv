@@ -2,12 +2,12 @@ Name,City,State,"Coordi,ats",Ratings
 ArakuValley,Vishakapatanam,AndhraPradesh,"18.3273,82.8775",4
 PrakasamBarrage,Vijayawada,AndhraPradesh,"16.5074,80.6052",4.6
 RamaKrishnaBeach,Vishakapatanam,AndhraPradesh,"17.7142,83.3237",4.5
-KondaReddyFort,Kurnool,AndhraPradesh,"1550′1.46″,782′55.04″",4.5
+KondaReddyFort,Kurnool,AndhraPradesh,"15.8339,78.0486",4.5
 SrikalahasthiTemple,Tirupati,AndhraPradesh,"13.7494,79.6983",4.7
 KanakaDurgaTemple,Vijayawada,AndhraPradesh,"16.5154,80.6059",4.7
 SriVenkateswaraSwamyVaariTemple,Tirupati,AndhraPradesh,"13.6833,79.3474",4.7
 SriVeeraVenkataSatyanarayanaSwamy,Annavaram,AndhraPradesh,"17.2827,82.4010",4.7
-GodavariArchBridge,Rajamahendravaram,AndhraPradesh,"1700′28.2″,8145′21″",4.5
+GodavariArchBridge,Rajamahendravaram,AndhraPradesh,"17.0079,81.7570",4.5
 EthipothalaFalls,Palnadu,AndhraPradesh,"16.5343,79.4028",4.4
 SrisailamReservoir,Srisailam,AndhraPradesh,"16.0869,78.8965",4.6
 SriBhramarambaMallikarjunaTemple,Srisailam,AndhraPradesh,"16.0733,78.8687",4.7
@@ -17,7 +17,7 @@ VeerabhadraSwamyTemple,Lepakshi,AndhraPradesh,"13.8018,77.6094",4.6
 Maredumilli,Rajahmahendravaram,AndhraPradesh,"17.5983,81.7135",4.5
 GandikotaFort,Kadapa,AndhraPradesh,"14.813433,78.284757",4.5
 Vanjangi,Vishakapatanam,AndhraPradesh,"18.0369,82.6619",4.5
-IskonTemple,Ananthapuram,AndhraPradesh,"1443'20"",7736'15""",4
+IskonTemple,Ananthapuram,AndhraPradesh,"13.0098,77.5511",4
 UndavalliCaves,Vijayawada,AndhraPradesh,"16.4957,80.5800",4.2
 SriAurobindoAshram,Pondicherry,Tamilnadu,"11.55,79.47",4.4
 Kodaikanal,Dindugul,Tamilnadu,"10.2381,77.4892",4.5
@@ -26,7 +26,7 @@ Brihadeshwaratemple,Thanjavur,Tamilnadu,"10.7828,79.1318",4.8
 Dhanushkodi,Pambanisland,Tamilnadu,"9.1794,79.4183",4.5
 MarudhamalaiArulmiguSubramanyaSwamiTemple,Coimbatore,Tamilnadu,"11.0465,76.8518",4.7
 MarinaBeach,Chennai,Tamilnadu,"13.0500,80.2824",4.3
-KapaleeshwararTemple(LordShiva),Chennai,Tamilnadu,"1302′0″,8016′6″",4.8
+KapaleeshwararTemple(LordShiva),Chennai,Tamilnadu,"13.0336,80.2700",4.8
 MadhuraMeenakshiTemple,Madhurai,Tamilnadu,"9.9195,78.1193",4.5
 CovelongBeach,Chennai,Tamilnadu,"12.7898,80.2542",4
 VivekanandaRockmemorial,Kanyakumari,Tamilnadu,"8.0781,77.5553",4.6
@@ -35,15 +35,15 @@ RamanathaswamyTemple,Rameswaram,Tamilnadu,"9.288106,79.317282",4.6
 ThillaiNatarajaTemple,Chidambaram,Tamilnadu,"11.3993,79.6935",4.7
 VelloreFort,Vellore,Tamilnadu,"12.9211,79.1295",4.3
 SriLakshmiNarayaniGoldenTemple,Vellore,Tamilnadu,"12.8741,79.0883",4.4
-FiveFalls,Courtallam,Tamilnadu,"855'52"",7714'18""",4.5
+FiveFalls,Courtallam,Tamilnadu,"8.9308,77.2378",4.5
 KamakshiAmmanTemple,Kanchipuram,Tamilnadu,"12.8407,79.7032",4.7
 ChettinadMaharaja'sPalace,Chettinad,Tamilnadu,"10.1746,78.7794",4.4
-SriRanganathaSwamyTemple,Tiruchirapalli,Tamilnadu,"1051′45″,7841′23″",4.6
+SriRanganathaSwamyTemple,Tiruchirapalli,Tamilnadu,"10,5145,78.4123",4.6
 SreePadmanabhaswamyTemple,Thiruvananthapuram,Kerala,"8.4828,76.9436",4.8
 PeriyarNationalPark,Idukki,Kerala,"9.4622,77.2368",4.3
 EravikulamNationalPark,Munnar,Kerala,"10.1377,77.0608",4.3
 AlappuzhaBeach,Alappuzha,Kerala,"9.4927,76.3178",4.5
-VizhinjamLighthouse,Kovalam,Kerala,"822′59″,7658′48″",4.6
+VizhinjamLighthouse,Kovalam,Kerala,"8.3829,76.9798",4.6
 WayanadWildlifeSanctuary,Wayanad,Kerala,"11.6716,76.3687",4.1
 CheraiBeach,Kochi,Kerala,"10.1416,76.1783",4.4
 AthirappillyWaterFalls,Thrissur,Kerala,"10.2851,76.5698",4.6
@@ -58,7 +58,7 @@ KizhunnaBeach,Kannur,Kerala,"11.8280,75.4129",4.5
 TeaMuseum,Munnar,Kerala,"10.095544,77.050717",3.8
 Valiyaparamba,Kasargod,Kerala,"12.1510,75.1420",4.4
 SilentValleyNationalPark,Mannarkkad,Kerala,"11.0694,76.4280",4.5
-PampadumSholaNationalPark,Idukki,Kerala,"108′38″,7716′1″",4.5
+PampadumSholaNationalPark,Idukki,Kerala,"10.14389,77.26694",4.5
 JogFalls,Shivamogga,Karnataka,"14.2294,74.8125",4.6
 Raja'sSeat(Coorg),Madikeri,Karnataka,"12.4151,75.7378",4.3
 SriBhootanaathaGudi,Badami,Karnataka,"15.9208,75.6877",4.7
@@ -68,11 +68,11 @@ OmBeach,Gokarna,Karnataka,"14.5192,74.3230",4.5
 St.Mary'sIsland,Udupi,Karnataka,"13.3792,74.6733",4.5
 MullayanagiriPeak,Chikkamagaluru,Karnataka,"13.3909,75.7213",4.7
 LotusMahal,Hampi,Karnataka,"15.3203,76.4713",4.6
-NagaraholeTigerReserve,Hunsur,Karnataka,"1215'37.69"",7617'34.4""",4.4
+NagaraholeTigerReserve,Hunsur,Karnataka,"12.0734,76.1511",4.4
 LalbaghBotanicalGarden,Bengaluru,Karnataka,"12.9507,77.5848",4.4
 NandiHills,Chikballapur,Karnataka,"13.3702,77.6835",4
 SriMurudeshwaraShivatemple,Murdeshwar,Karnataka,"14.0937,74.4848",4.7
-SriMahabaleshwaraSwamiTemple,Gokarna,Karnataka,"1432′36″,7418′59″",4.6
+SriMahabaleshwaraSwamiTemple,Gokarna,Karnataka,"14.5435,74.3164",4.6
 VisvesvarayaIndustrial&TechnicalMuseum,Bengaluru,Karnataka,"12.975100,77.596400",4.6
 TipuSultan'sSummerPalace,Bengaluru,Karnataka,"12.9594,77.5736",3.9
 BengaluruPalace,Bengaluru,Karnataka,"12.9988,77.5921",4.2
@@ -83,7 +83,7 @@ Charminar,Hyderabad,Telangana,"17.3616,78.4747",4.5
 GolcondaFort,Hyderabad,Telangana,"17.3833,78.4011",4.4
 BirlaMandir,Hyderabad,Telangana,"17.4062,78.4691",4.7
 SalarJungMuseum,Hyderabad,Telangana,"17.3716,78.4802",4.4
-ThousandPillarTemple,Warangal,Telangana,"1800′13.4″,7934′29.1″",4.5
+ThousandPillarTemple,Warangal,Telangana,"18.0037, 79.5747",4.5
 RamappaTemple,Mulugu,Telangana,"18.2593,79.9433",4.7
 StatueOfEquality,Muchintal,Telangana,"17.1860,78.3332",4.6
 RamojiFilmCity,Abdullahpurmet,Telangana,"17.2543,78.6808",4.4
@@ -95,7 +95,7 @@ warangalfort,Warangal,Telangana,"17.9561,79.6147",4.4
 Medakfort,Medak,Telangana,"18.0435,78.2572",4.1
 NagarjunaSagarDam,Nalgonda,Telangana,"16.5760,79.3124",4
 TajFalaknumaPalace,Hyderabad,Telangana,"17.3315,78.4675",4.6
-MallelaThirthamWaterfall,Nagarkurnool,Telangana,"1615′58″,7851′23″",4.4
+MallelaThirthamWaterfall,Nagarkurnool,Telangana,"16.266144,78.856403",4.4
 Meccamasjid,Hyderabad,Telangana,"17.3604,78.4736",4.7
 AnantagiriHills,Vikarabad,Telangana,"17.3120,77.8636",4.4
 HussainSagar,Hyderabad,Telangana,"17.4239,78.4738",4.3
@@ -106,7 +106,7 @@ Tadoba-AndhariNationalPark,Chandrapur,Maharashtra,"20.2484,79.3607",4.5
 ShreeSiddhivinayakTemple,Prabhadevi,Maharashtra,"19.0168,72.8303",4.8
 SanjayGandhiNationalPark,Mumbai,Maharashtra,"19.2288,72.9182",4.3
 LohagadFort,Lonavala,Maharashtra,"18.7102,73.4759",4.3
-ShaniwarWada,Pune,Maharashtra,"1831'9"",7351'19""",4.3
+ShaniwarWada,Pune,Maharashtra,"18.5195,73.8553",4.3
 SinhagadFort,Pune,Maharashtra,"18.3663,73.7559",4.6
 AgaKhanPalace,Pune,Maharashtra,"18.5525,73.9015",4.3
 PawnaLake,Pune,Maharashtra,"18.6668,73.4858",4.5
@@ -175,7 +175,7 @@ ChilikaLake,Ganjam,Odisha,"19.8450,85.4788",4.3
 MahadevChandrashekharTemple,Patia,Odisha,"2040'54.4"",8545'47.1""",4.6
 ChandakaForest,Cuttack,Odisha,"20.3488,85.6640",4.3
 SwargadwarSeaBeach,Puri,Odisha,"19.7918,85.8158",4.5
-KarlapatWildLifeSanctuary,Kalahandi,Odisha,"1940'19.8"",8302'10.1""",4.2
+KarlapatWildLifeSanctuary,Kalahandi,Odisha,"19.4100,83.0900",4.2
 GirNationalPark,TalalaGir,Gujarat,"21.1243,70.8242",4.4
 ShreeSomnathJyotirlingTemple,Veraval,Gujarat,"20.8880,70.4010",4.8
 SabarmatiAshram,Ahmedabad,Gujarat,"23.0608,72.5809",4.6

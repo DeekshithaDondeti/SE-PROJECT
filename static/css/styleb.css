@@ -1,0 +1,113 @@
+/* styleb.css */
+
+/* Body styles */
+body {
+  background-image: url(Image/dropdownbg.jpg); /* Replace with your background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e1e1e1; /* Light gray background color */
+  font-family: Arial, sans-serif; /* Change font style */
+}
+
+/* Label styles */
+label {
+  color: #ffffff; /* White font color */
+  font-size: 18px; /* Increase font size */
+  font-family: candara;
+}
+
+/* Form container styles */
+.form-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add a slight shadow */
+  background-color: rgba(0, 0, 0, 0.85); /* Less opaque black background color */
+  padding: 40px;
+  border-radius: 5px;
+  opacity: 0.9; /* Reduce opacity */
+  max-width: 850px; /* Reduce the maximum width of the form */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px; /* Adjust the padding as desired */
+}
+
+/* Heading styles */
+h1 {
+  color: #ffffff; /* White text color */
+  text-align: center;
+  font-size: 32px; /* Increase font size */
+  font-family: Trebuchet MS;
+  font-weight: 900;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+/* Dropdown styles */
+.custom-select {
+  background-color: #D3D3D3; /* Light gray dropdown background color */
+  color: #000000; /* Black text color */
+  border: none;
+  font-weight: 550;
+  border-radius: 3px;
+  padding: 10px; /* Increase padding for bigger size */
+  margin-bottom: 20px;
+  width: 100%; /* Set the same width for all dropdowns */
+  box-sizing: border-box;
+  font-family: verdana; /* Change font style */
+  font-weight: 800;
+  font-size: 15px; /* Increase font size */
+  line-height: 1.5; /* Adjust line height for better readability */
+}
+
+.custom-select:focus {
+  outline: 2px solid #555555; /* Gray outline color */
+}
+
+.custom-select option:hover {
+  background-color: #555555; /* Gray background color on hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+.custom-select option:checked {
+  background-color: #808080 !important; /* Black selection color */
+  color: #ffffff !important; /* White text color */
+}
+
+.custom-select option:checked:hover {
+  background-color: #A9A9A9; /* Light gray background color for selected option on hover */
+}
+
+/* Selected tags styles */
+#selectedTags {
+  margin-top: 10px;
+}
+
+/* Selected tags styles */
+.tag {
+  display: inline-block;
+  background-color: #A9A9A9; /* Brown tag background color */
+  color: #ffffff; /* White tag text color */
+  padding: 10px; /* Increase padding for bigger size */
+  border-radius: 5px; /* Rectangular shape */
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 18px; /* Increase font size */
+  font-family: verdana; /* Change font style */
+}
+
+
+/* Submit button styles */
+input[type="submit"] {
+  display: block; /* Convert the submit button to a block-level element */
+  margin: 0 auto; /* Center the submit button horizontally */
+  background-color: #EBECF0; /* Black submit button background color */
+  color: #111111; /* White text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: Century Gothic;
+  font-size:19px;
+  font-weight: 1700;
+}
+
+input[type="submit"]:hover {
+  background-color: #D3D3D3; /* Dark gray hover background color */
+}
