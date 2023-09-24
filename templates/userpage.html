@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/styleu.css') }}">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-profile">
+      <img src="{{ url_for('static',filename='css/Image/user2.jpg') }}" alt="User Profile Picture">
+      <span class="sidebar-profile-name">John Doe</span>
+      <div class="profile-dropdown">
+        <h2>User Profile</h2>
+        <div class="profile-picture">
+          <img src="{{ url_for('static',filename='css/Image/user2.jpg') }}" alt="User Profile Picture">
+        </div>
+        <p>Name: John Doe</p>
+        <p>Email: john.doe@example.com</p>
+        <p>Location: New York, USA</p>
+      </div>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="{{url_for('login') }}" class="sidebar-link">Home</a>
+      <a href="#" class="sidebar-link">About</a>
+      <a href="#" class="sidebar-link">Blog</a>
+      <br>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1></h1>
+    <div class="top-right">
+      <br>
+      <button class="button-logout">Logout</button>
+    </div>
+
+    <div class="container">
+      <div class="buttons">
+        <button class="button route-button"><a href="{{url_for('befroute') }}" style="color: black; font-weight: bold; text-decoration: none;">Route Optimization </a></button>
+        <button class="button budget-button"> <a href="{{url_for('budget') }}"style="color: black; font-weight: bold; text-decoration: none;">Budget Tracking</a> </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const profile = document.querySelector('.sidebar-profile');
+        const dropdown = document.querySelector('.profile-dropdown');
+
+        profile.addEventListener('click', function() {
+          profile.classList.toggle('open');
+        });
+      });
+      document.querySelector(".button-logout").addEventListener("click", function() {
+        var confirmLogout = confirm("Are you sure you want to log out?");
+      });
+
+  </script>
+</body>
+</html>

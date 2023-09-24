@@ -1,0 +1,276 @@
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/stylet.css') }}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="sub-container">
+          <!-- Budget -->
+          <div class="total-amount-container">
+            <h3>Budget</h3>
+            <p class="hide error" id="budget-error">
+              Value cannot be empty or negative
+            </p>
+            <input
+              type="number"
+              id="total-amount"
+              placeholder="Enter Total Amount"
+            />
+            <button class="submit" id="total-amount-button">Set Budget</button>
+          </div>
+
+          <!-- Expenditure -->
+          <div class="user-amount-container">
+            <h3>Expenses</h3>
+            <p class="hide error" id="product-title-error">
+              Values cannot be empty
+            </p>
+            <input
+              type="text"
+              class="product-title"
+              id="product-title"
+              placeholder="Type of expenditure"
+            />
+            <input
+              type="number"
+              id="user-amount"
+              placeholder="Amount"
+            />
+            <button class="submit" id="check-amount">Check Amount</button>
+          </div>
+        </div>
+        <!-- Output -->
+        <div class="output-container flex-space">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount">0</span>
+          </div>
+          <div>
+            <p>Expenses</p>
+            <span id="expenditure-value">0</span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balance-amount">0</span>
+          </div>
+        </div>
+      </div>
+
+<div class="day-display">
+  <h3>Day: 1</h3>
+  <!-- <span id="current-day"></span> -->
+</div>
+
+      <!-- List -->
+      <div class="list">
+        <h3>Expense List</h3>
+        <div class="list-container" id="list"></div>
+      </div>
+
+<div class="button-container">
+  <button class="submit" id="saveDataButton">Save Data</button>
+  <button class="submit" id="nextDayButton">Next Day</button>
+</div>
+    </div>
+    <!-- Script -->
+    <script >
+      // DOM Elements
+const totalAmountInput = document.getElementById('total-amount');
+const setBudgetButton = document.getElementById('total-amount-button');
+const productTitleInput = document.getElementById('product-title');
+const userAmountInput = document.getElementById('user-amount');
+const checkAmountButton = document.getElementById('check-amount');
+const amountDisplay = document.getElementById('amount');
+const expenditureValue = document.getElementById('expenditure-value');
+const balanceAmount = document.getElementById('balance-amount');
+const list = document.getElementById('list');
+const saveDataButton = document.getElementById('saveDataButton');
+const nextDayButton = document.getElementById('nextDayButton');
+const dayDisplay = document.getElementById('day-display');
+
+// Variables
+let tempAmount = 0;
+let expenses = [];
+let currentDay = 1;
+
+// Event listeners
+setBudgetButton.addEventListener('click', setBudget);
+checkAmountButton.addEventListener('click', addExpense);
+saveDataButton.addEventListener('click', saveData);
+nextDayButton.addEventListener('click', goToNextDay);
+
+// Load data on page load
+window.addEventListener('load', loadData);
+
+// Function to initialize the application
+function initialize() {
+  tempAmount = localStorage.getItem('budget') || 0;
+  currentDay = parseInt(localStorage.getItem('currentDay')) || 1;
+  dayDisplay.innerText = `Day ${currentDay}`;
+  amountDisplay.innerText = formatAmount(tempAmount);
+  updateBalance();
+  loadExpenseList();
+}
+
+// Function to set the budget amount
+function setBudget() {
+  const amount = parseFloat(totalAmountInput.value);
+  if (isNaN(amount) || amount <= 0) {
+    showError('Value cannot be empty or negative', 'budget-error');
+    return;
+  }
+
+  tempAmount = amount;
+  amountDisplay.innerText = formatAmount(tempAmount);
+  totalAmountInput.value = '';
+
+  hideError('budget-error');
+  saveData();
+}
+
+// Function to add an expense
+function addExpense() {
+  const title = productTitleInput.value.trim();
+  const amount = parseFloat(userAmountInput.value);
+  if (title === '' || isNaN(amount) || amount <= 0) {
+    showError('Values cannot be empty', 'product-title-error');
+    return;
+  }
+
+  const newExpense = {
+    name: title,
+    value: amount,
+    day: currentDay
+  };
+
+  expenses.push(newExpense);
+  listCreator(title, amount, expenses.length - 1);
+  productTitleInput.value = '';
+  userAmountInput.value = '';
+
+  hideError('product-title-error');
+  updateBalance();
+  saveData();
+}
+
+// Function to update the balance
+function updateBalance() {
+  const totalExpenses = expenses.reduce((sum, expense) => sum + expense.value, 0);
+  const remainingBalance = tempAmount - totalExpenses;
+
+  expenditureValue.innerText = formatAmount(totalExpenses);
+  balanceAmount.innerText = formatAmount(remainingBalance);
+}
+
+// Function to save data in local storage
+function saveData() {
+  localStorage.setItem('budget', tempAmount);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+  localStorage.setItem('currentDay', currentDay);
+}
+
+// Function to load data from local storage
+function loadData() {
+  initialize();
+  loadExpenseList();
+}
+
+// Function to load the expense list
+function loadExpenseList() {
+  const storedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+  expenses = storedExpenses.filter(expense => expense.day === currentDay);
+  updateExpenseList();
+}
+
+//Function To Modify List Elements
+const modifyElement = (element, edit = false) => {
+  let parentDiv = element.parentElement;
+  let currentBalance = balanceValue.innerText;
+  let currentExpense = expenditureValue.innerText;
+  let parentAmount = parentDiv.querySelector(".amount").innerText;
+  if (edit) {
+    let parentText = parentDiv.querySelector(".product").innerText;
+    productTitle.value = parentText;
+    userAmount.value = parentAmount;
+    disableButtons(true);
+  }
+  balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
+  expenditureValue.innerText =
+    parseInt(currentExpense) - parseInt(parentAmount);
+  parentDiv.remove();
+};
+
+
+//Function To Create List
+const listCreator = (expenseName, expenseValue) => {
+  let sublistContent = document.createElement("div");
+  sublistContent.classList.add("sublist-content", "flex-space");
+  list.appendChild(sublistContent);
+  sublistContent.innerHTML = `<p class="product">${expenseName}</p><p class="amount">${expenseValue}</p>`;
+  let editButton = document.createElement("button");
+  editButton.classList.add("fa-solid", "fa-pen-to-square", "edit");
+  editButton.style.fontSize = "1.2em";
+  editButton.addEventListener("click", () => {
+    modifyElement(editButton, true);
+  });
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
+  deleteButton.style.fontSize = "1.2em";
+  deleteButton.addEventListener("click", () => {
+    modifyElement(deleteButton);
+  });
+  sublistContent.appendChild(editButton);
+  sublistContent.appendChild(deleteButton);
+  document.getElementById("list").appendChild(sublistContent);
+};
+
+
+// Function to go to the next day
+function goToNextDay() {
+  saveData();
+  currentDay++;
+  dayDisplay.innerText = `Day ${currentDay}`;
+  loadExpenseList();
+}
+
+// Utility function to format amount with rupee symbol
+function formatAmount(amount) {
+  return `${amount.toFixed(2)}`;
+}
+
+// Utility function to show an error message
+function showError(message, elementId) {
+  const errorElement = document.getElementById(elementId);
+  errorElement.innerText = message;
+  errorElement.classList.remove('hide');
+}
+
+// Utility function to hide an error message
+function hideError(elementId) {
+  const errorElement = document.getElementById(elementId);
+  errorElement.classList.add('hide');
+}
+
+// Next day button click event
+nextDayButton.addEventListener('click', () => {
+  currentDay++;
+  dayDisplay.innerText = `Day ${currentDay}`;
+  list.innerHTML = ''; // Clear the expense list
+});
+
+// Call the initialize function
+initialize();
+
+
+    </script>
+  </body>
+</html>
